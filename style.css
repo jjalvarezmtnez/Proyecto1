@@ -1,0 +1,473 @@
+/* FUENTES IMPORTADAS */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* VARIABLES */
+:root {
+  /* Colores */
+  --color-primary:	#06CBAB;
+  --bg-primary-color: 	#FAFAFA;
+  --bg-secondary-color: 	#111111;
+  --color-primary-text: 	#F2F2F2;
+  --color-secondary-text: #B0B0B0;
+
+  /* Tipografía */
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-body: 'Urbanist', sans-serif;
+
+  /* Tamaños */
+  --font-xxl: 5rem;
+  --font-xl: 4rem;
+  --font-lg: 2.5rem;
+  --font-md: 1.25rem;
+  --font-sm: 1rem;
+
+  /* Padding */
+  --pad-xl: 5rem;
+  --pad-lg: 3rem;
+  --pad-md: 1.5rem;
+  --pad-sm: 1rem;
+}
+
+/* NORMALIZACION */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary-color);
+}
+
+/* ESTILOS GENERALES */
+h1, h2 {
+  font-family: "Bebas Neue";
+  text-transform: uppercase;
+  font-size: var(--font-lg);
+}
+
+span, p {
+  font-family: "Urbanist";
+  font-size: var(--font-md);
+}
+
+button {
+  color: var(--bg-secondary-color);
+  background-color: var(--color-primary);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: var(--font-md);
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CSS DESKTOP */
+
+/* HEADER */
+header {
+  padding: var(--pad-sm) var(--pad-lg);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-primary-color);
+  z-index: 1;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 178px 1fr 250px;
+  grid-template-rows: 100px;
+  gap: 3rem;
+  align-items: center;
+}
+
+nav > img {
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+
+.nav-links > li {
+  list-style: none;
+  font-family: var(--font-body);
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+}
+
+.nav-links > li > a {
+  text-decoration: none;
+  color: var(--bg-secondary-color);
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icons > a {
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.icons > a > img {
+  height: 40px;
+  width: auto;
+}
+
+.icons > button {
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  display: none;
+}
+
+.icons > button > img {
+  height: 40px;
+  width: auto;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  display: flex;
+  background-color: var(--bg-secondary-color);
+  padding: var(--pad-xl);
+  justify-content: space-evenly;
+  gap: 25px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 380px;
+  gap: 20px;
+  min-width: 358px;
+  flex: 1 1 auto;
+}
+
+.hero-div > h1 {
+  color: var(--color-primary-text);
+  font-size: var(--font-xxl);
+  font-weight: lighter;
+  line-height: 4.5rem;
+  margin-bottom: 0;
+}
+
+.hero-div > p {
+  color: var(--color-primary-text);
+  font-size: var(--font-md);
+  max-width: 300px;
+}
+
+.image {
+  flex: 1 1 40%;
+  max-width: 800px;
+  min-width: 400px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.image > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* PRODUCTS */
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--pad-xl);
+}
+
+.products > h2 {
+  font-size: var(--font-xl);
+  padding-bottom: var(--pad-md);
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 50px;
+}
+
+article {
+  transition: transform 0.5s;
+}
+
+article:hover {
+  transform: scale(1.1);
+}
+
+article > img {
+  transform: rotateY(180deg);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: var(--color-primary-text);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+article > h3 {
+  text-transform: capitalize;
+  font-size: var(--font-md);
+  padding-top: 0.5rem;
+}
+
+article > a {
+  display: block;
+  padding-top: 0.75rem;
+  text-decoration: none;
+  font-size: var(--font-md);
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* BRANDS */
+.brands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--pad-xl);
+}
+
+.brands > h2 {
+  font-size: var(--font-xl);
+  padding-bottom: var(--pad-md);
+}
+
+.brands-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.brands-logo > li {
+  list-style-type: none;
+  background-color: var(--color-primary-text);
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.brands-logo > li > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+/* COMPANY */
+
+.company {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: var(--font-xxl);
+  gap: 50px;
+  background-color: var(--bg-secondary-color);
+  margin-top: 3rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.company > section > h2 {
+  color: var(--color-primary-text);
+  font-size: var(--font-xl);
+  font-weight: lighter;
+  padding-bottom: 1rem;
+}
+
+.company > section > p {
+  color: var(--color-primary-text);
+  font-size: var(--font-md);
+  max-width: 500px;
+  text-align: justify;
+}
+
+.company > section > label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.company > section > label > input {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary-text);
+  border-radius: 12px;
+  padding: 0.5rem 2rem;
+  width: 250px;
+  color: var(--bg-secondary-color);
+  font-size: var(--font-sm);
+}
+
+.company > section > label > input::placeholder {
+  color: var(--bg-secondary-color);
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--pad-sm);
+  gap: 2rem;
+  background-color: var(--bg-secondary-color);
+  margin-top: var(--pad-sm);
+}
+
+.contact {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.contact > ul > li {
+  list-style: none;
+  font-family: var(--font-body);
+  color: var(--color-primary-text);
+  font-size: var(--font-sm);
+}
+
+.contact > ul > li > a {
+  text-decoration: none;
+  color: var(--color-primary-text);
+}
+
+.contact > ul > li:first-child {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-size: var(--font-md);
+  margin-bottom: 0.25rem;
+}
+
+footer > p {
+  color: var(--color-primary-text);
+}
+
+/* DESKTOP 1024px */
+@media (max-width: 1024px) {
+  header {
+  padding: var(--pad-sm) var(--pad-lg);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-primary-color);
+  z-index: 1;
+}
+
+nav {
+  grid-template-columns: 150px 1fr 200px;
+  grid-template-rows: 80px;
+  gap: 1.5rem;
+}
+
+nav > img {
+  width: 150px;
+}
+
+.icons > a {
+  padding: 1.5rem;
+}
+.icons > a > img {
+  height: 30px;
+}
+
+.icons > button > img {
+  height: 30px;
+}
+
+.contact {
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+}
+
+/* TABLET 768px */
+@media (max-width: 768px) {
+.nav-links {
+  display: none;
+}
+
+nav {
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px;
+  gap: 1.5rem;
+}
+
+.icons > button {
+  display: block;
+}
+}
+
+/* MOBILE 558px*/
+@media (max-width: 558px) {
+header {
+  padding: var(--pad-sm) var(--pad-sm);
+}
+
+.icons > a {
+  display: none;
+}
+
+.image {
+  max-width: 400px;
+  min-width: 250px;
+}
+
+.hero {
+  padding: var(--pad-xl) var(--pad-sm);
+}
+
+.hero-div {
+  min-width: 0px;
+}
+
+.products {
+  padding: var(--pad-lg) var(--pad-sm);
+}
+
+.products > h2 {
+  padding-bottom: var(--pad-sm);
+}
+
+article:hover {
+  transform: none;
+}
+}
